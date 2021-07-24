@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="{{ asset('css/common.css') }}">
     <link rel="stylesheet" href="{{ asset('css/main.css') }}">
     <link rel="stylesheet" href="{{ asset('css/blogListMedia.css') }}">
+    @trixassets
     @livewireStyles
 
 </head>
@@ -72,41 +73,36 @@
                         @if(Route::has('login'))
                         @auth
                         @if(Auth::user()->utype === 'ADM')
-                    <li class="menu-item menu-item-has-children parent">
-                        <a title="My Account" href="#">My Account({{Auth::user()->name}})<i class="fa fa-angle-down" aria-hidden="true"></i></a>
-                        <ul class="submenu curency">
-                            <li class="menu-item">
-                                <a title="Dashboard" href="{{ route('admin.dashboard') }}">Dashboard</a>
-                            </li>
-                            <form id="logout-form" method="POST" action="{{ route('logout') }}">
-                                @csrf
-                                <li class="menu-item">
-                                    <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
-                                </li>
+                    <li class="nav-item">
+                        <a class="nav-link" title="My Account" href="#">My Account({{Auth::user()->name}})<i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" title="Manage blogs" href="{{ route('admin.blogs') }}">Manage Blogs</a>
+                    </li>
+                    <form id="logout-form" method="POST" action="{{ route('logout') }}">
+                        @csrf
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+                        </li>
 
-                            </form>
-                        </ul>
+                    </form>
                     </li>
                     @else
                     <li class="menu-item menu-item-has-children parent">
-                        <a title="My Account" href="#">My Account({{Auth::user()->name}})<i class="fa fa-angle-down" aria-hidden="true"></i></a>
-                        <ul class="submenu curency">
-                            <li class="menu-item">
-                                <a title="Dashboard" href="{{ route('user.dashboard') }}">Dashboard</a>
-                            </li>
-                            <form id="logout-form" method="POST" action="{{ route('logout') }}">
-                                @csrf
-                                <li class="menu-item">
-                                    <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
-                                </li>
-
-                            </form>
-                        </ul>
+                        <a class="nav-link" title="My Account" href="#">My Account({{Auth::user()->name}})<i class="fa fa-angle-down" aria-hidden="true"></i></a>
                     </li>
+                    <form id="logout-form" method="POST" action="{{ route('logout') }}">
+                        @csrf
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+                        </li>
+
+                    </form>
+
                     @endif
                     @else
-                    <li class="menu-item"><a title="Register or Login" href="{{ route('login')}}">Login</a></li>
-                    <li class="menu-item"><a title="Register or Login" href="{{ route('register')}}">Register</a></li>
+                    <li class="nav-item"><a class="nav-link" title="Register or Login" href="{{ route('login')}}">Login</a></li>
+                    <li class="nav-item"><a class="nav-link" title="Register or Login" href="{{ route('register')}}">Register</a></li>
                     @endif
                     @endif
                     </li>
