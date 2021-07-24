@@ -4,26 +4,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ asset('images/logo.png') }}" type="image/x-icon">
     <title>Xortech</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/flaticon.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="css/slick.css" />
-    <link rel="stylesheet" type="text/css" href="css/slick-theme.css" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/flaticon.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/slick.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/slick-theme.css') }}" />
     <link href="https://allfont.net/allfont.css?fonts=agency-fb" rel="stylesheet" type="text/css" />
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <!-- ****************************change****************************************** -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
     <!-- **********************change************************************************ -->
-    <link rel="stylesheet" href="css/flaticon.css">
-    <link rel="stylesheet" href="css/common.css">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/blogListMedia.css">
+    <link rel="stylesheet" href="{{ asset('css/flaticon.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/common.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/main.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/blogListMedia.css') }}">
     @livewireStyles
 
 </head>
@@ -36,7 +36,7 @@
         <div class="container">
 
             <!-- =====Logo Part Starts=================== -->
-            <a class="navbar-brand logo" href="#"><img src="images/logo.png" class="img-fluid">
+            <a class="navbar-brand logo" href="#"><img src="{{ asset('images/logo.png') }}" class="img-fluid">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <i class="fa fa-bars" aria-hidden="true"></i>
@@ -68,6 +68,48 @@
                     <li class="nav-item">
                         <a class="nav-link " href="#contact">Contact</a>
                     </li>
+                    <li>
+                        @if(Route::has('login'))
+                        @auth
+                        @if(Auth::user()->utype === 'ADM')
+                    <li class="menu-item menu-item-has-children parent">
+                        <a title="My Account" href="#">My Account({{Auth::user()->name}})<i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                        <ul class="submenu curency">
+                            <li class="menu-item">
+                                <a title="Dashboard" href="{{ route('admin.dashboard') }}">Dashboard</a>
+                            </li>
+                            <form id="logout-form" method="POST" action="{{ route('logout') }}">
+                                @csrf
+                                <li class="menu-item">
+                                    <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+                                </li>
+
+                            </form>
+                        </ul>
+                    </li>
+                    @else
+                    <li class="menu-item menu-item-has-children parent">
+                        <a title="My Account" href="#">My Account({{Auth::user()->name}})<i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                        <ul class="submenu curency">
+                            <li class="menu-item">
+                                <a title="Dashboard" href="{{ route('user.dashboard') }}">Dashboard</a>
+                            </li>
+                            <form id="logout-form" method="POST" action="{{ route('logout') }}">
+                                @csrf
+                                <li class="menu-item">
+                                    <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+                                </li>
+
+                            </form>
+                        </ul>
+                    </li>
+                    @endif
+                    @else
+                    <li class="menu-item"><a title="Register or Login" href="{{ route('login')}}">Login</a></li>
+                    <li class="menu-item"><a title="Register or Login" href="{{ route('register')}}">Register</a></li>
+                    @endif
+                    @endif
+                    </li>
 
 
                 </ul>
@@ -75,14 +117,14 @@
             </div>
         </div>
     </nav>
-        {{ $slot }}
+    {{ $slot }}
 
     <section id="footer">
         <div class="container ">
             <div class="row ">
                 <div class="col-lg-4 ">
                     <div class="footer-logo ">
-                        <a class="navbar-brand logo " href="# "><img src="images/logo.png " class="img-fluid w-100 ">
+                        <a class="navbar-brand logo " href="# "><img src="{{ asset('images/logo.png') }}" class="img-fluid w-100 ">
                         </a>
                     </div>
                     <div class="footer-paragraph ">
@@ -162,10 +204,10 @@
         </div>
 
     </section>
-    <script src="js/jquery-1.12.4.min.js "></script>
-    <script src="js/slick.min.js "></script>
-    <script src="js/bootstrap.min.js "></script>
-    <script src="js/custom.js "></script>
+    <script src="{{ asset('js/jquery-1.12.4.min.js') }}"></script>
+    <script src="{{ asset('js/slick.min.js') }}"></script>
+    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('js/custom.js') }}"></script>
     @livewireScripts
 </body>
 
