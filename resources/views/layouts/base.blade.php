@@ -63,7 +63,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link " href="#blog">Blog</a>
+                    <a class="nav-link" target="_self" href="{{ route('bloglist')}}">Blog</a>
                     </li>
 
                     <li class="nav-item">

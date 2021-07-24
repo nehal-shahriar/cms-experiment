@@ -3,6 +3,7 @@
 use App\Http\Livewire\Admin\AdminAddBlogs;
 use App\Http\Livewire\Admin\AdminBlogs;
 use App\Http\Livewire\Admin\AdminDashboardComponent;
+use App\Http\Livewire\BlogList;
 use App\Http\Livewire\DetailBlog;
 use App\Http\Livewire\HomeComponent;
 use App\Http\Livewire\User\UserDashboardComponent;
@@ -29,5 +30,6 @@ Route::middleware(['auth:sanctum', 'verified','authadmin'])->group(function(){
     Route::get('/admin/blogs',AdminBlogs::class)->name('admin.blogs');
     Route::get('/admin/blogs/add',AdminAddBlogs::class)->name('admin.addblogs');
 });
+Route::get('/bloglist',BlogList::class)->name('bloglist');
 Route::get('/{urlslug}',DetailBlog::class);
 Route::get('/', HomeComponent::class);
