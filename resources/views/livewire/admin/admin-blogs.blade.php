@@ -36,7 +36,7 @@
                                 <td>{{ $blog->id }}</td>
                                 <td><img src="{{ asset('images/blogs/'.$blog->image) }}" width="60" /></td>
                                 <td>{{ $blog->title }}</td>
-                                <td><a class="text-indigo-600 hover-text-indigo-900" target="_blank" href="{{URL::to('/'.$blog->slug)}}">
+                                <td><a class="text-indigo-600 hover-text-indigo-900" target="_self" href="{{URL::to('/'.$blog->slug)}}">
                                         {{$blog->slug}}
                                     </a>
                                 </td>
