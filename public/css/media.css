@@ -1,0 +1,508 @@
+/* Large Screen */
+
+
+/* Large devices (desktops, 992px and up) */
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .col-md-2 {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 16.666667%;
+        flex-wrap: wrap;
+    }
+    .about-text h3:nth-child(2) {
+        text-align: center;
+    }
+    .about-text p {
+        margin: auto;
+    }
+    .portfolio-text p {
+        font-size: 20px;
+        width: 100%;
+    }
+    .portfolio .col-lg-4:first-of-type::after {
+        width: 200px;
+        top: 21px;
+    }
+    .portf .col-lg-4:last-of-type::before {
+        width: 200px;
+        bottom: 21px;
+    }
+    .portfolio .card {
+        margin-top: 3rem;
+        height: 600px;
+    }
+    .portf .card {
+        margin-bottom: 3rem;
+        height: 600px;
+    }
+    .portf.col-lg-4 {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+        flex: auto 0 100%;
+        max-width: 100%;
+    }
+    .socialmedia {
+        text-align: center;
+    }
+    .fa-facebook,
+    .fa-twitter,
+    .fa-envelope-o,
+    .fa-phone,
+    .fa-map-marker {
+        font-size: 31px;
+    }
+    .footer-text {
+        padding-left: 0;
+        text-align: center;
+    }
+    .view-all a {
+        padding-left: 11px;
+        padding-right: 11px;
+    }
+    .navbar .navbar-nav .nav-item .nav-link {
+        color: #FFFFFF;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 700;
+        font-size: 15px;
+        text-transform: capitalize;
+    }
+    .banner-item {
+        margin-bottom: 3rem;
+    }
+    .banner-items::after {
+        bottom: 35px;
+        width: 167px;
+    }
+    .Team .col-lg-6 {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 50%;
+        flex: 0 0 100%;
+        max-width: 87%;
+    }
+    .team-image svg {
+        width: 84%;
+        height: 131%;
+    }
+    .team-image {
+        text-align: center;
+        margin-left: 151px;
+    }
+    .fa-facebook,
+    .fa-twitter,
+    .fa-envelope-o,
+    .fa-phone,
+    .fa-map-marker,
+    .fa-linkedin {
+        font-size: 26px;
+    }
+    .about-text {
+        width: 420px;
+    }
+    .about-image img {
+        text-align: center;
+        padding-left: 0px;
+        width: 100%;
+        padding-top: 113px;
+    }
+}
+
+
+/* Medium devices (tablets, 768px and up) */
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .send {
+        text-align: center;
+    }
+    .contact-image {
+        display: none;
+    }
+    .form-group input {
+        width: 100%;
+    }
+    .col-md-2 {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 16.666667%;
+        flex: 0 0 100.667%;
+        max-width: 108.667%;
+    }
+    .col-4 {
+        position: relative;
+        width: 100%;
+        min-height: 1px;
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+    .navbar {
+        background: #000;
+        text-align: center;
+    }
+    .portfolio .card {
+        margin-top: 3rem;
+    }
+    .portf .card {
+        margin-bottom: 3rem;
+    }
+    .qoutation {
+        margin: auto;
+    }
+    .qoute {
+        margin-top: 13rem;
+    }
+    .copyRight {
+        text-align: center;
+    }
+    .footer-logo {
+        width: 203px;
+        margin: auto;
+    }
+    .footer-paragraph p {
+        font-size: 18px;
+        text-align: center;
+    }
+    .socialmedia {
+        text-align: center;
+    }
+    .fa-facebook,
+    .fa-twitter,
+    .fa-envelope-o,
+    .fa-phone,
+    .fa-map-marker {
+        font-size: 31px;
+    }
+    .footer-text h3 {
+        font-size: 34px;
+        text-align: center;
+        padding-top: 40px;
+    }
+    .footer-text {
+        padding-left: 0;
+        text-align: center;
+    }
+    .view-all {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    .banner-item {
+        margin-bottom: 3rem;
+    }
+    .banner-items::after {
+        bottom: 25px;
+    }
+    .team-image img {
+        width: 100%;
+        height: 100%;
+    }
+    .team-text p {
+        font-size: 16px;
+        line-height: 29px;
+        padding: 0;
+        margin-left: 0;
+        margin-top: 3rem;
+    }
+    .form-group textarea {
+        width: 100%;
+    }
+}
+
+
+/*  Small devices (landscape phones, 576px and up) */
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .send {
+        text-align: center;
+    }
+    .form-group textarea {
+        width: 100%;
+    }
+    .current::after {
+        top: -20px;
+        left: -6px;
+    }
+    .about-text {
+        width: 100%;
+    }
+    .navbar {
+        background: #000;
+    }
+    .navbar ul li {
+        width: 70%;
+        margin: auto auto;
+        text-align: center;
+    }
+    .banner-text h3 {
+        padding-bottom: 10px;
+        font-size: 44px;
+        text-align: center;
+    }
+    .banner-link {
+        text-align: center;
+    }
+    .banner-link a {
+        font-size: 14px;
+        padding-top: 14px;
+        padding-bottom: 14px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .about-text p {
+        padding: 40px;
+        width: 100%;
+        text-align: justify;
+    }
+    .portfolio .card {
+        margin-top: 3rem;
+        height: 540px;
+    }
+    .portf .card {
+        margin-bottom: 3rem;
+        height: 540px;
+    }
+    .portfolio .col-lg-4:first-of-type::after {
+        top: 25px;
+        left: 1px;
+        width: 65%;
+    }
+    .form-group input::placeholder {
+        line-height: 70px;
+    }
+    .copyRight {
+        text-align: center;
+    }
+    .footer-logo {
+        width: 203px;
+        margin: auto;
+    }
+    .footer-paragraph p {
+        font-size: 18px;
+        text-align: center;
+    }
+    .socialmedia {
+        text-align: center;
+    }
+    .fa-facebook,
+    .fa-twitter,
+    .fa-envelope-o,
+    .fa-phone,
+    .fa-map-marker {
+        font-size: 31px;
+    }
+    .footer-text h3 {
+        font-size: 34px;
+        text-align: center;
+    }
+    .view-all {
+        text-align: center;
+        margin-bottom: 60px;
+    }
+    .banner-item {
+        margin-bottom: 3rem;
+    }
+    .banner-items::after {
+        bottom: 38px;
+        right: 9px;
+        width: 61%;
+    }
+    .team-image svg {
+        width: 51%;
+        height: 51%;
+    }
+    .team-text p {
+        font-size: 16px;
+        line-height: 29px;
+        padding: 0;
+        margin-left: 0;
+        margin-top: 3rem;
+    }
+    .team-image {
+        text-align: center;
+    }
+    .blog-links {
+        margin: 0 auto;
+    }
+    .current::before {
+        right: -2%;
+        bottom: -23px;
+    }
+    .portfolio-text {
+        padding-left: 10px;
+    }
+    .about-image {
+        text-align: center;
+        padding-left: 0px;
+    }
+    .about-image img {
+        width: 100%;
+        height: 100%;
+    }
+    .portfolio-text p {
+        width: 100%;
+    }
+    .portf .col-lg-4:last-of-type::before {
+        bottom: 30px;
+        right: 3px;
+        width: 61%;
+    }
+    .contact-image {
+        display: none;
+    }
+    .form-group input {
+        width: 100%;
+    }
+}
+
+
+/* Extra small devices (portrait phones, less than 576px) */
+
+@media ( min-width:320px)and ( max-width: 575.98px) {
+    .send {
+        text-align: center;
+    }
+    .form-group textarea {
+        width: 100%;
+    }
+    .current::after {
+        top: -20px;
+        left: -6px;
+    }
+    .about-text {
+        width: 100%;
+    }
+    .navbar-toggler {
+        margin: auto;
+    }
+    .logo {
+        height: 48px;
+        width: 134px;
+    }
+    .fa-bars {
+        font-size: 14px;
+    }
+    .navbar-toggler {
+        display: inline-block;
+        text-align: right;
+    }
+    .navbar ul li {
+        width: 70%;
+        margin: auto auto;
+        text-align: center;
+    }
+    .banner-text h3 {
+        padding-bottom: 10px;
+        font-size: 44px;
+        text-align: center;
+    }
+    .banner-link {
+        text-align: center;
+    }
+    .banner-link a {
+        font-size: 14px;
+        padding-top: 14px;
+        padding-bottom: 14px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .about-text p {
+        padding: 40px;
+        width: 100%;
+        text-align: justify;
+    }
+    .portfolio .card {
+        margin-top: 3rem;
+        height: 540px;
+    }
+    .portf .card {
+        margin-bottom: 3rem;
+        height: 540px;
+    }
+    .portfolio .col-lg-4:first-of-type::after {
+        top: 25px;
+        left: 1px;
+        width: 65%;
+    }
+    .form-group input::placeholder {
+        line-height: 70px;
+    }
+    .copyRight {
+        text-align: center;
+    }
+    .footer-logo {
+        width: 203px;
+        margin: auto;
+    }
+    .footer-paragraph p {
+        font-size: 18px;
+        text-align: center;
+    }
+    .socialmedia {
+        text-align: center;
+    }
+    .fa-facebook,
+    .fa-twitter,
+    .fa-envelope-o,
+    .fa-phone,
+    .fa-map-marker {
+        font-size: 31px;
+    }
+    .footer-text h3 {
+        font-size: 34px;
+        text-align: center;
+    }
+    .view-all {
+        text-align: center;
+        margin-bottom: 60px;
+    }
+    .banner-item {
+        margin-bottom: 3rem;
+    }
+    .banner-items::after {
+        bottom: 38px;
+        right: 9px;
+        width: 61%;
+    }
+    .team-image svg {
+        width: 51%;
+        height: 51%;
+    }
+    .team-text p {
+        font-size: 16px;
+        line-height: 29px;
+        padding: 0;
+        margin-left: 0;
+        margin-top: 3rem;
+    }
+    .team-image {
+        text-align: center;
+    }
+    .blog-links {
+        margin: 0 auto;
+    }
+    .current::before {
+        right: -2%;
+        bottom: -23px;
+    }
+    .portfolio-text {
+        padding-left: 10px;
+    }
+    .about-image {
+        text-align: center;
+        padding-left: 0px;
+    }
+    .about-image img {
+        width: 100%;
+        height: 100%;
+    }
+    .portfolio-text p {
+        width: 100%;
+    }
+    .portf .col-lg-4:last-of-type::before {
+        bottom: 30px;
+        right: 3px;
+        width: 61%;
+    }
+    .contact-image {
+        display: none;
+    }
+    .form-group input {
+        width: 100%;
+    }
+}

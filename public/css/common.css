@@ -1,0 +1,323 @@
+/* All Common Css Starts*/
+
+* {
+    outline: 0;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    overflow-y: scroll;
+    height: auto;
+    overflow-x: hidden;
+}
+
+ul,
+ol {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.navbar-toggler {
+    background: transparent;
+    border: none;
+}
+
+.fa-bars {
+    color: #fff;
+    font-size: 40px;
+}
+
+
+/* All Common Css Ends*/
+
+
+/*================== Menu PArt Starts===========*/
+
+.body {
+    position: relative;
+}
+
+.bg {
+    display: none;
+}
+
+.nav-item a {
+    position: relative;
+}
+
+.active::after {
+    content: "";
+    left: 0;
+    top: 38px;
+    position: absolute;
+    background: #005750;
+    height: 4px;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.navbar .navbar-nav .nav-item .nav-link {
+    color: #FFFFFF;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    text-transform: capitalize;
+}
+
+.navbar {
+    background: rgba(0, 0, 0);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+}
+
+
+/*============ Menu part Ends==============*/
+
+
+/* Footer PArt Starts */
+
+#footer {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background: #000000;
+}
+
+.footer-paragraph p {
+    color: #BBBBBB;
+    font-size: 20px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.siteMap-list ul li {
+    list-style-type: none;
+    padding-bottom: 18px;
+}
+
+.siteMap-list ul li a {
+    color: #BBBBBB;
+    font-size: 20px;
+}
+
+.socialmedia .fa-facebook,
+.socialmedia .fa-twitter,
+.socialmedia .fa-envelope-o,
+.fa-phone,
+.fa-map-marker,
+.socialmedia .fa-linkedin {
+    font-size: 40px;
+    background: -moz-linear-gradient(top, #00877C 0%, #00433E 100%);
+    background: -webkit-linear-gradient(top, #00877C 0%, #00433E 100%);
+    background: linear-gradient(to bottom, #00877C 0%, #00433E 100%);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding-right: 40px;
+}
+
+.fa-phone {
+    padding-right: 28px;
+}
+
+.socialmedia .fa-facebook:hover,
+.socialmedia .fa-twitter:hover,
+.socialmedia .fa-envelope-o:hover,
+.socialmedia .fa-phone:hover,
+.socialmedia .fa-map-marker:hover,
+.socialmedia .fa-linkedin:hover {
+    cursor: pointer;
+    background: -moz-linear-gradient(top, rgba(0, 135, 124, 0.678) 0%, rgba(0, 67, 63, 0.596) 100%);
+    background: -webkit-linear-gradient(top, rgba(0, 135, 124, 0.514) 0%, rgba(0, 67, 63, 0.836) 100%);
+    background: linear-gradient(to bottom, rgba(0, 135, 124, 0.507) 0%, rgba(0, 67, 63, 0.685) 100%);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.footer-text p {
+    color: #BBBBBB;
+    font-size: 20px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.footer-text h3 {
+    padding-top: 22px;
+    color: #FFFFFF;
+    font-size: 30px;
+    font-weight: 500;
+    padding-bottom: 50px;
+}
+
+.copyRight {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.copyRight p {
+    color: #FFFFFF;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 28px;
+}
+
+#copy-right {
+    padding: 14px;
+    padding-bottom: 14px;
+    background: #0D0D0D;
+}
+
+.copyRight p span {
+    padding-right: 6px;
+}
+
+
+/* Contact Part Starts */
+
+#contact {
+    padding-top: 120px;
+    padding-bottom: 120px;
+}
+
+.contact-text h3 {
+    color: black;
+    font-size: 64px;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding-bottom: 70px;
+    font-family: 'Agency FB', arial;
+}
+
+.contact-text p {
+    color: #6D6D6D;
+    font-size: 24px;
+    font-weight: 500;
+    padding-bottom: 20px;
+}
+
+.form-group input {
+    height: 70px;
+    width: 75%;
+    caret-color: #007067;
+    font-size: 25px;
+    color: #6D6D6D;
+    font-size: 25px;
+    line-height: 70px;
+    background: #FFFFFF;
+}
+
+.form-group input::placeholder {
+    color: #6D6D6D;
+    font-size: 25px;
+    line-height: 70px;
+}
+
+.form-group button {
+    margin-top: 50px;
+    background: #007067;
+    border: none;
+    color: #FFFFFF;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    box-shadow: 5px 5px 10px #707070;
+}
+
+.form-group input:focus {
+    box-shadow: 2px 2px 8px #007067, -2px -2px 8px #007067;
+    border: 1px solid #007067;
+}
+
+
+/* Contact PArt Ends */
+
+.slick-dots li button::before {
+    font-size: 0;
+}
+
+.slick-dots li {
+    background: #EBEBEB;
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+}
+
+.slick-dots li button {
+    background: transparent;
+}
+
+.slick-dots .slick-active {
+    background: #007067;
+}
+
+.slick-dots {
+    position: absolute;
+    bottom: -57px;
+}
+
+.back-to-top {
+    background: #000;
+    height: 40px;
+    width: 40px;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    border-radius: 10px;
+    text-align: center;
+    z-index: 999999;
+}
+
+.share-links {
+    display: none;
+}
+
+.fa-arrow-up {
+    color: #FFFFFF;
+    line-height: 40px;
+    font-size: 20px;
+}
+
+.footer-logo {
+    width: 250%;
+}
+
+.readMore {
+    color: #000000;
+    font-weight: 700;
+}
+
+.socialmedia {
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+
+.port-icon svg {
+    background: transparent;
+    color: teal;
+}
+
+.port-icon img {
+    margin-bottom: 30px;
+    margin-top: 20px;
+}
+
+.blog-image img {
+    height: 190px;
+    width: 190px;
+}
