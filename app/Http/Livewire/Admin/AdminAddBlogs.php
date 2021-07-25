@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Admin;
 use App\Models\Blog;
+use App\Models\Topic;
 use Carbon\Carbon;
 use Illuminate\Validation\Rule;
 use Livewire\Component;
@@ -15,7 +16,9 @@ class AdminAddBlogs extends Component
     public $slug;
     public $content;
     public $image;
-
+    public $topic_id;
+    public $topiclist=[];
+   
 
     public function generateSlug(){
         $this->slug=Str::slug($this->title,'-');
@@ -30,12 +33,14 @@ class AdminAddBlogs extends Component
         $imageName=Carbon::now()->timestamp.'.'.$this->image->extension();
         $this->image->storeAs('blogs',$imageName);
         $blog->image=$imageName;
-
+        //$blog->topiclist=$this->topiclist;
+        $blog->topiclist = implode(',', $this->topiclist);
         $blog->save();
         session()->flash('message','Blog has been created successfully');
     }
     public function render()
     {
-        return view('livewire.admin.admin-add-blogs')->layout('layouts.base');
+        $topics=Topic::all();
+        return view('livewire.admin.admin-add-blogs',['topics'=>$topics])->layout('layouts.base');
     }
 }

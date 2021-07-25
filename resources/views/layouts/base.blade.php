@@ -24,6 +24,8 @@
     <link rel="stylesheet" href="{{ asset('css/common.css') }}">
     <link rel="stylesheet" href="{{ asset('css/main.css') }}">
     <link rel="stylesheet" href="{{ asset('css/blogListMedia.css') }}">
+
+    <link rel="stylesheet" href="{{ asset('css/chosen.min.css') }}">
     @trixassets
     @livewireStyles
 
@@ -63,7 +65,7 @@
                     </li>
 
                     <li class="nav-item">
-                    <a class="nav-link" target="_self" href="#blog">Blog</a>
+                        <a class="nav-link" target="_self" href="#blog">Blog</a>
                     </li>
 
                     <li class="nav-item">
@@ -78,6 +80,9 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" title="Manage blogs" href="{{ route('admin.blogs') }}">Manage Blogs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" title="Topics" href="{{ route('admin.topics')}}">Topics</a>
                     </li>
                     <form id="logout-form" method="POST" action="{{ route('logout') }}">
                         @csrf
@@ -204,6 +209,17 @@
     <script src="{{ asset('js/slick.min.js') }}"></script>
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('js/custom.js') }}"></script>
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- JS & CSS library of MultiSelect plugin -->
+    <script type="text/javascript" src="{{ asset('js/jquery-3.6.0.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/chosen.jquery.min.js') }}"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#topiclist').chosen();
+        });
+    </script>
     @livewireScripts
 </body>
 

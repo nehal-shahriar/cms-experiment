@@ -54,6 +54,17 @@
                                 </div>
                             </div>
                             <div class="form-group">
+                                <label for="topiclist" class="col-md-4 control-label">options</label>
+                                <div class="col-md-4">
+                                    <select id="topiclist" multiple="" style="width: 300px;">
+        
+                                        @foreach($topics as $topic)
+                                        <option value="{{$topic->id}}">{{$topic->name}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
                                 <label for="" class="col-md-4 control-label"></label>
                                 <div class="col-md-4">
                                     <button type="submit" class="btn btn-primary">Submit</button>
