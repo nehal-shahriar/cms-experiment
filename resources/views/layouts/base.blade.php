@@ -47,7 +47,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" href="#banner">Home </a>
+                        <a class="nav-link active" href="/">Home </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#about">About</a>
@@ -63,7 +63,7 @@
                     </li>
 
                     <li class="nav-item">
-                    <a class="nav-link" target="_self" href="{{ route('bloglist')}}">Blog</a>
+                    <a class="nav-link" target="_self" href="#blog">Blog</a>
                     </li>
 
                     <li class="nav-item">

@@ -454,7 +454,7 @@
             <div class="col-lg-2">
                 <diV class="view-all">
                     <!-- ./blogList.html -->
-                    <a href="#">
+                    <a href="{{route('bloglist')}}">
                         View all
                     </a>
                 </diV>
@@ -462,77 +462,33 @@
         </div>
 
 
+        @foreach($bloglist as $blog)
         <div class="blog-item current firts-blog">
             <!--************ chnage  ffirst-blog******************-->
             <div class="row blog-links">
                 <div class="col-lg-9">
                     <div class="blog-head">
-                        <h3>Lorem Ipsum Dolor Sit Amet.
+                        <h3>{{$blog->title}}
                         </h3>
 
                     </div>
                     <div class="blog-para">
-                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores rebum.
-                            <span class="readMore">...Read more</span>
+                        <p>
+                            {!! $blog->content !!}<a class="text-indigo-600 hover-text-indigo-900" target="_self" href="{{URL::to('/'.$blog->slug)}}">
+                                <span class="readMore ">...Read More </span></a>
                         </p>
                     </div>
                 </div>
                 <div class="col-lg-3">
                     <div class="blog-image">
-                        <img src="images/blog1.png" class="img-fluid w-100" alt="blog">
+                        <img src="{{asset('images/blogs/'.$blog->image)}}" class="img-fluid w-100" alt="blog">
                     </div>
                 </div>
 
             </div>
-
         </div>
-        <div class="blog-item">
-            <div class="row blog-links">
-                <div class="col-lg-9">
-                    <div class="blog-head">
-                        <h3>Lorem Ipsum Dolor Sit Amet.
-                        </h3>
-
-                    </div>
-                    <div class="blog-para">
-                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores rebum.
-                            <span class="readMore">...Read more</span>
-                        </p>
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <div class="blog-image">
-                        <img src="images/blog2.png" class="img-fluid w-100" alt="blog">
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
+        @endforeach
         <div>
-
-        </div>
-        <div class="blog-item">
-            <div class="row blog-links">
-                <div class="col-lg-9">
-                    <div class="blog-head">
-                        <h3>Lorem Ipsum Dolor Sit Amet.
-                        </h3>
-
-                    </div>
-                    <div class="blog-para">
-                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores rebum.
-                            <span class="readMore">...Read more</span>
-                        </p>
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <div class="blog-image">
-                        <img src="images/blog.jpg" class="img-fluid w-100" alt="blog">
-                    </div>
-                </div>
-
-            </div>
 
         </div>
     </div>

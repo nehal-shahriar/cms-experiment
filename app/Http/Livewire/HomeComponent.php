@@ -2,12 +2,14 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Blog;
 use Livewire\Component;
 
 class HomeComponent extends Component
 {
     public function render()
     {
-        return view('livewire.home-component')->layout('layouts.base');
+        $bloglist = Blog::orderBy('created_at','DESC')->get()->take(3);
+        return view('livewire.home-component',['bloglist'=>$bloglist])->layout('layouts.base');
     }
 }
