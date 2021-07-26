@@ -53,16 +53,25 @@
                                     @endif
                                 </div>
                             </div>
-                            <div class="form-group">
+                            <!-- <div class="form-group" wire:ignore>
                                 <label for="topiclist" class="col-md-4 control-label">options</label>
                                 <div class="col-md-4">
-                                    <select id="topiclist" multiple="" style="width: 300px;">
+                                    <select id="topiclist" multiple="multiple" style="width: 300px;">
         
                                         @foreach($topics as $topic)
                                         <option value="{{$topic->id}}">{{$topic->name}}</option>
                                         @endforeach
                                     </select>
                                 </div>
+                            </div> -->
+
+                            <div class="form-group">
+                                <label>Select Options</label>
+                                <select class="select2" multiple="multiple" data-placeholder="Select a State" style="width: 100%;">
+                                    @foreach($topics as $topic)
+                                    <option value="{{$topic->id}}">{{$topic->name}}</option>
+                                    @endforeach
+                                </select>
                             </div>
                             <div class="form-group">
                                 <label for="" class="col-md-4 control-label"></label>
