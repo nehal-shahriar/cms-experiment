@@ -92,7 +92,8 @@ class BlogsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $blog=Blog::find($id);
+        return view('livewire.admin.admin-edit-blogs',['blog'=>$blog]);
     }
 
     /**
@@ -102,9 +103,25 @@ class BlogsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        $request->validate([
+            'image'=>'required|image|mimes:jpeg,png,gif,svg|max:2048',
+            'slug'=>'unique:blogs',
+        ]);
+
+        $blog=Blog::find($request->id);
+        $blog->title=$request->title;
+        $blog->slug=$request->slug;
+        $blog->content=$request->content;
+        if($request->hasFile('image')){
+            $image = $request->file('image');
+            $images = time().'.'.$image->extension();
+            $image->move(public_path('images/blogs'),$images);
+            $blog->images =$images;
+        };
+        $blog->save();
+        return redirect('/admin/blogs')->with('message', 'Your blog has been updated!');
     }
 
     /**

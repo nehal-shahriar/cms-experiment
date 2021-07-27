@@ -37,6 +37,8 @@ Route::middleware(['auth:sanctum', 'verified','authadmin'])->group(function(){
     Route::delete('/admin/blogs/{id}', [BlogsController::class, 'destroy'])->name('blog.destroy');
     Route::get('/admin/topics',AdminTopics::class)->name('admin.topics');
     Route::get('/admin/topics/add',AdminAddTopics::class)->name('admin.addtopics');
+    Route::get('/admin/blogs/edit/{id}',[BlogsController::class, 'edit'])->name('blog.edit');
+    Route::post('/admin/blogs/edit',[BlogsController::class, 'update'])->name('blog.update');
 });
 Route::get('/bloglist',BlogList::class)->name('bloglist');
 Route::get('/{urlslug}',DetailBlog::class);

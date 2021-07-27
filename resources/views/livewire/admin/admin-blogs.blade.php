@@ -48,8 +48,8 @@
                                 </td>
                                 <td>{!! $blog->content !!}</td>
                                 <td>{{$blog->created_at}}</td>
-                                <td class="flex">
-                                    <a href="#"><i class="fa fa-edit fa-2x text-info"></i></a>
+                                <td>
+                                <a href="{{route('blog.edit',['id'=>$blog->id])}}"><i class="fa fa-edit fa-2x text-info"></i></a>
                                     <form action="/admin/blogs/{{ $blog->id }}" method="POST">
                                         @csrf
                                         @method('DELETE')
