@@ -32,6 +32,7 @@
                                 <label for="" class="col-md-4 control-label">Title</label>
                                 <div class="col-md-4">
                                     <input type="text" placeholder="Title" class="form-control input-md" value="{{$blog->title}}" name="title">
+                                    @error('title') <span class="error">{{ $message }}</span>@enderror
                                 </div>
                             </div>
 
@@ -41,12 +42,14 @@
                                     <span class="inline-flex items-center px-3 rounded-l-md border border-r-0 border-gray-300 bg-gray-50 text-gray-500 text-sm">
                                         http://127.0.0.1:8000/
                                     </span><input type="text" placeholder="Slug" class="form-control input-md" value="{{$blog->slug}}" name="slug">
+                                    @error('slug') <span class="error">{{ $message }}</span>@enderror
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="" class="col-md-4 control-label">Blog Image</label>
                                 <div class="col-md-4">
                                     <input type="file" class="input-file" value="{{$blog->images}}"name="image">
+                                    @error('image') <span class="error">{{ $message }}</span>@enderror
                                 </div>
                             </div>
                             
@@ -55,6 +58,7 @@
                                 <div class="body-content">
                                     <input id="content" type="hidden" name="content" value="{{$blog->content}}">
                                     <trix-editor input="content"></trix-editor>
+                                    @error('content') <span class="error">{{ $message }}</span>@enderror
                                 </div>
                             </div>
 

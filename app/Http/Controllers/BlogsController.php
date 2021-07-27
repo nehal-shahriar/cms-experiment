@@ -106,13 +106,15 @@ class BlogsController extends Controller
     public function update(Request $request)
     {
         $request->validate([
+            'title'=>'unique:blogs',
+            'content'=>'required',
             'image'=>'required|image|mimes:jpeg,png,gif,svg|max:2048',
             'slug'=>'unique:blogs',
         ]);
 
         $blog=Blog::find($request->id);
         $blog->title=$request->title;
-        $blog->slug=$request->slug;
+        $blog->slug=Str::slug($request->title,'-');
         $blog->content=$request->content;
         if($request->hasFile('image')){
             $image = $request->file('image');
