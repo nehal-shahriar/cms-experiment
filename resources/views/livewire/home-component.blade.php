@@ -481,7 +481,7 @@
                 </div>
                 <div class="col-lg-3">
                     <div class="blog-image">
-                        <img src="{{asset('images/blogs/'.$blog->image)}}" class="img-fluid w-100" alt="blog">
+                        <img src="{{asset('images/blogs/'.$blog->images)}}" class="img-fluid w-100" alt="blog">
                     </div>
                 </div>
 

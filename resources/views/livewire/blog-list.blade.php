@@ -92,7 +92,7 @@
             <div class="row pt-5 ">
                 <div class="col-lg-4 pt-5 ">
                     <div class="blog-image  mt-3 ">
-                        <img src="{{asset('images/blogs/'.$blog->image)}}" alt="blog imgae " class="img-fluid w-100 ">
+                        <img src="{{asset('images/blogs/'.$blog->images)}}" alt="{{$blog->title}}" class="img-fluid w-100 ">
                     </div>
                 </div>
                 <div class="col-lg-8 p-5">

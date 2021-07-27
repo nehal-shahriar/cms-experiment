@@ -10,7 +10,7 @@ class DetailBlog extends Component
     public $title;
     public $content;
     public $urlslug;
-    public $image;
+    public $images;
     public $date;
 
     public function mount($urlslug = null)
@@ -29,7 +29,7 @@ class DetailBlog extends Component
 
         $this->title = $data->title;
         $this->content = $data->content;
-        $this->image = $data->image;
+        $this->images = $data->images;
         $this->date = $data->created_at;
     }
     public function render()

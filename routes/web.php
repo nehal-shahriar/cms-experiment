@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BlogsController;
 use App\Http\Livewire\Admin\AdminAddBlogs;
 use App\Http\Livewire\Admin\AdminAddTopics;
 use App\Http\Livewire\Admin\AdminBlogs;
@@ -10,7 +11,6 @@ use App\Http\Livewire\DetailBlog;
 use App\Http\Livewire\HomeComponent;
 use App\Http\Livewire\User\UserDashboardComponent;
 use Illuminate\Support\Facades\Route;
-use Whoops\Run;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,8 +30,11 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function(){
 //admin panel
 Route::middleware(['auth:sanctum', 'verified','authadmin'])->group(function(){
     Route::get('/admin/dashboard',AdminDashboardComponent::class)->name('admin.dashboard');
+    Route::get('/admin/blogs/create', [BlogsController::class, 'create'])->name('blog.create');
+    Route::post('/admin/blogs/store', [BlogsController::class, 'store'])->name('blog.store');
+    Route::get('/admin/blogs/check_slug',[BlogsController::class, 'checkSlug'])->name('blogs.checkSlug');
     Route::get('/admin/blogs',AdminBlogs::class)->name('admin.blogs');
-    Route::get('/admin/blogs/add',AdminAddBlogs::class)->name('admin.addblogs');
+    Route::delete('/admin/blogs/{id}', [BlogsController::class, 'destroy'])->name('blog.destroy');
     Route::get('/admin/topics',AdminTopics::class)->name('admin.topics');
     Route::get('/admin/topics/add',AdminAddTopics::class)->name('admin.addtopics');
 });
