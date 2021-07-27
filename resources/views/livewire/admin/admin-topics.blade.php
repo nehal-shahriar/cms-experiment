@@ -39,7 +39,8 @@
                                 </td>
                                 <td>{{$topic->created_at}}</td>
                                 <td>
-
+                                    <a href="{{route('admin.edittopic',['topic_slug'=>$topic->slug])}}"><i class="fa fa-edit fa-2x"></i></a>
+                                    <a href="#" onclick="confirm('Are your sure, your want to delete this topic?') || event.stopImmediatePropagation()" wire:click.prevent="deletetopic({{$topic->id}})"><i class="fa fa-times fa-2x"></i></a>
                                 </td>
                             </tr>
                             @endforeach
