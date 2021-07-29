@@ -474,9 +474,10 @@
                     </div>
                     <div class="blog-para">
                         <p>
-                            {!! $blog->content !!}<a class="text-indigo-600 hover-text-indigo-900" target="_self" href="{{URL::to('/'.$blog->slug)}}">
-                                <span class="readMore ">...Read More </span></a>
+                            {!! substr_replace($blog->content, "...", 100) !!}<a class="text-indigo-600 hover-text-indigo-900" target="_self" href="{{URL::to('/'.$blog->slug)}}">
+                                <span class="readMore ">Read More </span></a>
                         </p>
+
                     </div>
                 </div>
                 <div class="col-lg-3">
@@ -517,21 +518,40 @@
             </div>
         </div>
         <div class="contact-form">
-            <form>
+            @if(Session::has('message'))
+            <div class="alert alert-success" role="alert">{{Session::get('message')}}</div>
+            @endif
+            <form class="form-horizontal" wire:submit.prevent="sendMessage">
                 <div class="form-group">
-                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Email">
+
+                    <div class="col-md-6">
+                        <input type="email" placeholder="Email" class="form-control input-md" wire:model="email">
+                    </div>
+                </div>
+
+                <div class="form-group">
+
+                    <div class="col-md-6">
+                        <input type="text" placeholder="Name" class="form-control input-md" wire:model="name">
+                    </div>
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Name">
+                    <div class="col-md-6">
+                        <input type="text" placeholder="Phone" class="form-control input-md" wire:model="phone">
+                    </div>
                 </div>
+
                 <div class="form-group">
-                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Phone">
+                    <div class="col-md-6">
+                        <textarea class="form-control input-md" placeholder="Your Message" wire:model="message"></textarea>
+                    </div>
                 </div>
+
                 <div class="form-group">
-                    <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Your Message"></textarea>
-                </div>
-                <div class="form-group send">
-                    <button type="submit">Send</button>
+                    <label for="" class="col-md-4 control-label"></label>
+                    <div class="col-md-4">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
                 </div>
             </form>
         </div>

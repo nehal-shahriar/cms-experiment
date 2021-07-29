@@ -71,20 +71,14 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link " href="#contact">Contact</a>
+                        <a class="nav-link" href="#contact">Contact</a>
                     </li>
                     <li>
                         @if(Route::has('login'))
                         @auth
                         @if(Auth::user()->utype === 'ADM')
                     <li class="nav-item">
-                        <a class="nav-link" title="My Account" href="#">My Account({{Auth::user()->name}})<i class="fa fa-angle-down" aria-hidden="true"></i></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" title="Manage blogs" href="{{ route('admin.blogs') }}">Manage Blogs</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" title="Topics" href="{{ route('admin.topics')}}">Topics</a>
+                        <a class="nav-link" title="My Account" href="{{ route('admin.dashboard') }}">{{Auth::user()->name}}<i class="fa fa-angle-down" aria-hidden="true"></i></a>
                     </li>
                     <form id="logout-form" method="POST" action="{{ route('logout') }}">
                         @csrf
@@ -95,8 +89,8 @@
                     </form>
                     </li>
                     @else
-                    <li class="menu-item menu-item-has-children parent">
-                        <a class="nav-link" title="My Account" href="#">My Account({{Auth::user()->name}})<i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                    <li class="nav-item">
+                        <a class="nav-link" title="My Account" href="#">{{Auth::user()->name}}<i class="fa fa-angle-down" aria-hidden="true"></i></a>
                     </li>
                     <form id="logout-form" method="POST" action="{{ route('logout') }}">
                         @csrf

@@ -4,14 +4,17 @@ use App\Http\Controllers\BlogsController;
 use App\Http\Livewire\Admin\AdminAddBlogs;
 use App\Http\Livewire\Admin\AdminAddTopics;
 use App\Http\Livewire\Admin\AdminBlogs;
+use App\Http\Livewire\Admin\AdminContact;
 use App\Http\Livewire\Admin\AdminDashboardComponent;
 use App\Http\Livewire\Admin\AdminEditTopic;
 use App\Http\Livewire\Admin\AdminTopics;
 use App\Http\Livewire\BlogList;
+use App\Http\Livewire\Contact;
 use App\Http\Livewire\DetailBlog;
 use App\Http\Livewire\HomeComponent;
 use App\Http\Livewire\User\UserDashboardComponent;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -41,7 +44,9 @@ Route::middleware(['auth:sanctum', 'verified','authadmin'])->group(function(){
     Route::get('/admin/blogs/edit/{id}',[BlogsController::class, 'edit'])->name('blog.edit');
     Route::post('/admin/blogs/edit',[BlogsController::class, 'update'])->name('blog.update');
     Route::get('/admin/topics/edit/{topic_slug}',AdminEditTopic::class)->name('admin.edittopic');
+    Route::get('/admin/contact-us',AdminContact::class)->name('admin.contact');
 });
 Route::get('/bloglist',BlogList::class)->name('bloglist');
 Route::get('/{urlslug}',DetailBlog::class);
 Route::get('/', HomeComponent::class);
+

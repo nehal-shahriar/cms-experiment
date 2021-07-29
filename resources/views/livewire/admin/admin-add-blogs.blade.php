@@ -30,14 +30,14 @@
                                 </div>
                             </div>
 
-                            <div class="form-group">
+                            <!-- <div class="form-group">
                                 <label for="" class="col-md-4 control-label">Slug</label>
                                 <div class="col-md-4">
                                     <span class="inline-flex items-center px-3 rounded-l-md border border-r-0 border-gray-300 bg-gray-50 text-gray-500 text-sm">
                                         http://127.0.0.1:8000/
                                     </span><input type="text" placeholder="Slug" class="form-control input-md" id="slug" name="slug">
                                 </div>
-                            </div>
+                            </div> -->
                             <div class="form-group">
                                 <label for="" class="col-md-4 control-label">Blog Image</label>
                                 <div class="col-md-4">
@@ -75,7 +75,7 @@
         </div>
     </div>
 </div>
-@section('scripts')
+<!-- @section('scripts')
 <script>
     $('#title').change(function(e) {
         $.get("{{ route('blogs.checkSlug')}}", {
@@ -87,5 +87,5 @@
         );
     });
 </script>
-@endsection
+@endsection -->
 @endsection

@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Carbon\Carbon;
 use Illuminate\Support\Str;
 use Cviebrock\EloquentSluggable\Services\SlugService;
+use Illuminate\Validation\Rule;
 
 class BlogsController extends Controller
 {
@@ -42,15 +43,14 @@ class BlogsController extends Controller
     public function store(Request $request)
     {
         $request->validate([
+            'title' => 'required|unique:blogs',
+            'content' => 'required',
             'image'=>'required|image|mimes:jpeg,png,gif,svg|max:2048',
-            'slug'=>'unique:blogs',
         ]);
         
-        $blog= new Blog;
+        $blog= new Blog();
         $blog->title =$request->title;
-        $blog->slug =$request->slug;
-        //$slug=Str::slug($request->title,'-');
-        //$blog->slug=$slug;
+        $blog->slug=Str::slug($request->title,'-');
         $blog->content =$request->content;
         if($request->hasFile('image')){
             $image = $request->file('image');
@@ -65,13 +65,13 @@ class BlogsController extends Controller
 
         $blog->save();
 
-        return redirect('/admin/blogs/create')->with('message', 'Thanks for your order');
+        return redirect('/admin/blogs/create')->with('message', 'Your blog has been created successfully');
     }
 
-    public function checkSlug(Request $request){
-        $slug=SlugService::createSlug(Blog::class,'slug',$request->title);
-        return response()->json(['slug'=>$slug]);
-    }
+    // public function checkSlug(Request $request){
+    //     $slug=SlugService::createSlug(Blog::class,'slug',$request->title);
+    //     return response()->json(['slug'=>$slug]);
+    // }
 
     /**
      * Display the specified resource.
@@ -106,10 +106,9 @@ class BlogsController extends Controller
     public function update(Request $request)
     {
         $request->validate([
-            'title'=>'unique:blogs',
-            'content'=>'required',
+            'title'=>['required', Rule::unique('blogs','title')->ignore($request->id)],
+            'content' => 'required',
             'image'=>'required|image|mimes:jpeg,png,gif,svg|max:2048',
-            'slug'=>'unique:blogs',
         ]);
 
         $blog=Blog::find($request->id);
